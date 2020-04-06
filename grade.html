@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Grade Tests</title>
+  <meta name="viewport" content="width=device-width">
+  <title>Review Results</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.6/dist/css/uikit.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style2.css">
+</head>
+  <body>
+<script src="js.js"></script>
+  <ul>
+    <li><a href="instructor.html">Home</a></li>
+    <li><a href="createtest.html">Create Test</a></li>
+    <li><a href="questions.html">Create Questions</a></li>
+    <li><a class="active" href="grade.html">Grade Tests</a></li>
+    <li><a href="javascript:logOut()">Logout</a></li>
+  </ul>
+  <script>
+  function logOut(){
+      console.log("Log out");
+      window.localStorage.removeItem('username');
+      window.localStorage.removeItem('type')
+      window.location.replace('https://web.njit.edu/~jac323/index.php');
+  }
+  </script>
+  <h1>Available Student Results</h1><br>
+  <center><h2 style="color:red">Example of how it may look..</h2></center>
+  <div class="input-group mb-3">
+  <form id="student_results">
+    <table class="uk-table" id="view_studentResults">
+      <tr class="header">
+        <th>Name</th>
+        <th>Check for colon</th>
+        <th>Constraint</th>
+        <th>Test cases..</th>
+        <th>Test cases...</th>
+        <th>Comment</th>
+        <th>Override</th>
+      </tr>
+      <tr>
+        <td>Nameone</td>
+        <td>def digit_sum(abc):</td>
+        <td>Print</td>
+        <td>3</td>
+        <td>1</td>
+        <td><input type="text" id="commentOne" placeholder="Comment.."></td>
+        <td><input type="number" id="override"></td>
+      </tr>
+      <tr>
+        <td>.....</td>
+        <td>.....</td>
+        <td>.....</td>
+        <td>.....</td>
+        <td>.....</td>
+        <td>.....</td>
+        <td>.....</td>
+      </tr>
+      <tr>
+        <td>.....</td>
+        <td>.....</td>
+        <td>.....</td>
+        <td>.....</td>
+        <td>.....</td>
+        <td>.....</td>
+        <td>.....</td>
+      </tr>
+      <tr>
+        <td>.....</td>
+        <td>.....</td>
+        <td>.....</td>
+        <td>.....</td>
+        <td>.....</td>
+        <td>.....</td>
+        <td>.....</td>
+      </tr>
+      <tr>
+        <td>.....</td>
+        <td>.....</td>
+        <td>.....</td>
+        <td>.....</td>
+        <td>.....</td>
+        <td>.....</td>
+        <td>.....</td>
+      </tr>
+      <tr>
+        <td>.....</td>
+        <td>.....</td>
+        <td>.....</td>
+        <td>.....</td>
+        <td>.....</td>
+        <td>.....</td>
+        <td>.....</td>
+      </tr>
+
+    </table><br>
+  </form>
+</div>
+  <div style="text-align:center">
+  <button class="uk-button uk-button-primary uk-button-large" id="submit_results" type="button" onclick="">Submit</button><br><br>
+</div>
+
+</body>
+<script type="text/javascript" src="viewTeacher.js"></script>
