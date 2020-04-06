@@ -1,0 +1,43 @@
+body,html{
+  font-family: "Lato", sans-serif;
+  height:100%;
+
+}
+.page{
+  font-family:Helvetica Neue;
+  font-weight:250;
+  font-variant-ligatures:normal;
+  letter-spacing:1px;
+  text-align:center;
+  font-size: 30px;
+  color:#DC143C;
+  height:100%;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #191970;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #000000;
+}
+
+.active {
+  background-color: #DC143C;
+}
