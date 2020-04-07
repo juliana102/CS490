@@ -33,8 +33,8 @@ function submitExam(event){
 		document.getElementById("status").innerHTML = "No questions have been Added";
 	}
 	else{
-		var test_name = document.getElementById("test_name").value;
-		ajaxCallCreateTest(test_name);
+		var test_name = document.getElementById("testname").value;
+		ajaxCallCreateTest(testname);
 	}
 
 }
@@ -86,44 +86,7 @@ function makeExam() {
         return;
         //exit();
       }
-      //alert(total);
-      p1 = document.getElementById("p1").value;
-
-      p2 = document.getElementById("p2").value;
-
-      p3 = document.getElementById("p3").value;
-
-      p4 = document.getElementById("p4").value;
-
-      p5 = document.getElementById("p5").value;
-
-      p6 = document.getElementById("p6").value;
-
-      r1 = document.getElementById("r1").value;
-
-      r2 = document.getElementById("r2").value;
-
-      r3 = document.getElementById("r3").value;
-
-      r4 = document.getElementById("r4").value;
-
-      r5 = document.getElementById("r5").value;
-
-      r6 = document.getElementById("r6").value;
-
-      questionCat = document.getElementById("questionCat").value;
-           questionDiff = document.getElementById("questionDiff").value;
-           total = "version=".concat(version, "&Question=", Question, "&p1=", encodeURIComponent(p1), "&r1=", encodeURIComponent(r1), "&p2=", encodeURIComponent(p2), "&r2=", encodeURIComponent(r2), "&p3=", encodeURIComponent(p3), "&r3=", encodeURIComponent(r3), "&p4=", encodeURIComponent(p4), "&r4=", encodeURIComponent(r4), "&p5=", encodeURIComponent(p5), "&r5=", encodeURIComponent(r5), "&p6=", encodeURIComponent(p6), "&r6=", encodeURIComponent(r6), "&questionCat=", questionCat, "&questionDiff=", questionDiff);
-           total += "&constraint1=\"";
-           for (var i = 1; i < 6; i++) {
-             if (document.getElementById("check" + i).checked == true) {
-               total += "True,";
-             }
-             else {
-               total += "False,";
-             }
-           }
-           total += "\"";
+    
 /* function populateQDB(response){
 	questionDB = JSON.parse(response);
  console.log(questionDB);
@@ -180,26 +143,5 @@ function makeExam() {
 
 		table.appendChild(tr);
 	}
-} */
-/* function test(item) {
-  var operand1 = parseFloat($('#field_results').val());
-  var operand2 = 0;
-  var result;
 
-  $('input:checked').each(function() {
-    operand1 = parseInt($(this).val())
-    operand2 += operand1;
 
-  });
-  result = operand2;
-
-  $('#Totalcost').html(result);
-} */
-function calculate(){
-  var field1=document.getElementById('num1').value;
-  var field2=document.getElementById('num2').value;
-  var field3=document.getElementById('num3').value;
-  var result= parseFloat(num1)+parseFloat(num2)+parseFloat(num3);
-  if(!isNaN(result)){
-  document.getElementById('answer').innerHTML= result;
-}
