@@ -1,0 +1,51 @@
+[
+ {
+ "questionID":1,
+ "questionText":"Write a function named hello_there that takes arguments a_hello and b_hello that returns true if both a and b are saying hello or if neither of them are. Return false otherwise."
+ },
+ {
+ "questionID":2,
+ "questionText":"Write a function named sum that returns the sum of two numbers."
+ },
+ {
+ "questionID":3,
+ "questionText":"Write a function named mult that takes parameters a,b,c and prints the product of those three numbers."
+ },
+ {
+ "questionID":4,
+ "questionText":"Write a function called total that takes numbers as its argument and adds up all the elements of an arbitrary list and returns that count."
+ },
+ {
+ "questionID":5,
+ "questionText":"Write a function named swapPos that takes arguments 'list','pos1','pos2' and swaps the second and fourth element in list[5,9,11,23] and prints the result."
+ },
+ {
+ "questionID":6,
+ "questionText":"Write a function named not_string that takes argument str and adds 'not' to the front of the string, unless the string already begins with 'not' then return the string unchanged."
+ },
+ {
+ "questionID":7,
+ "questionText":"Write a function named list_len that takes a list as a parameter and returns the number of items in the list."
+ },
+ {
+ "questionID":8,
+ "questionText":"Write a function named count that takes two arguments sequence and item that returns the number of times the item occurs in the list."
+ },
+ {
+ "questionID":9,
+ "questionText":"Write a function named appendMiddle that takes arguments s1 and s2 and creates a new string by appending s2 in the middle of s1 then prints that new string"
+ },
+ {
+ "questionID":10,
+ "questionText":"Write a function named findAll that takes an input string as its argument and counts all lowercase,uppercase,digits,and special symbols.Then print the counts."
+ },
+ {
+ "questionID":11,
+ "questionText":"Write a function called digit_sum that takes a positive integer n as input and returns the sum of all that number's digits."
+ },
+ {
+ "questionID":12,
+ "questionText":"Write a function named factorial that takes a non-negative integer x that can multiply all the integers from 1 through x then returns it."
+ },
+
+]
