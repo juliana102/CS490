@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Student Grades</title>
+  <link rel="stylesheet" href="style2.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.6/dist/css/uikit.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.6/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.6/dist/js/uikit-icons.min.js"></script>
+	<script>
+	function logOut(){
+	    console.log("Log out");
+	    window.localStorage.removeItem('username');
+	    window.localStorage.removeItem('type')
+	    window.location.replace('https://web.njit.edu/~jac323/index.php');
+	}
+	</script>
+</head>
+
+<body style="background-color:white">
+	<ul>
+    <li><a href="studentpage.html">Home</a></li>
+    <li><a href="taketest.html">Take Test</a></li>
+    <li><a class="active" href="viewResults.html">View Results</a></li>
+    <li><a href="javascript:logOut()">Logout</a></li>
+  </ul>
+<center><h1>Find Your Released Scores Here!</h1></center>
+<div class="container-body" style="text-align:center">
+	<button type="button" onclick="getExam()" style="height:35px;width:150px">View Released Grades</button>
+
+</div>
+	</body>
+</html>
