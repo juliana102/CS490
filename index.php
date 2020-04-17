@@ -1,93 +1,32 @@
-<?php
-include('login.php');
-if(isset($_POST["submit"])){
-$url = 'https://web.njit.edu/~jac323/post.php';
-$fields = array(
-  'ucid' => urlencode($_POST["U"]),
-  'password'=> urlencode($_POST["P"])
-);
-
-$fields_string="";
-foreach($fields as $key=>$value) { $fields_string = $fields_string.$key.'='.$value.'&'; }
-rtrim($fields_string, '&');
-
-
-$ch = curl_init();
-
-
-curl_setopt($ch,CURLOPT_URL, $url);
-curl_setopt($ch,CURLOPT_POST, count($fields));
-curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
-
-
-$result = curl_exec($ch);
-
-
-curl_close($ch);
-
-echo $result;
-}
-?>
-
 <!DOCTYPE html>
 <html>
-
     <head>
-
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.24/css/uikit.min.css">
-
-
-
+				<link rel="stylesheet" href="css/styles.css">
         <meta charset="utf-8">
-
-        <title>cs490 login</title>
-
+         <script type = "text/javascript" src = "script/login.js" ></script>
+        <title>Login</title>
     </head>
-
-    <body>
-      <script src="login.js"></script>
-
+    <body onload="formListener();">
         <section id = "pre">
-
             <center><h1 class="pre">LOGIN</h1></center>
-
         </section>
-
         <div id = "main">
-
             <section id = "form" name = "main">
-
                 <center>
-
-                    <form class="login" action="post.php" method="POST">
-
-                        <input type = "hidden" name = "isSubmitted" value = "1"/>
-
-
-
-                        <input type="text" name="U" id="ucid" placeholder="UCID"/>
-
+                    <form action="" method="" id="login-form">
+                        <input type="hidden" id="reqid" name="reqid" value="0"/>
+                        <input type="text" name="username" id="username" placeholder="UCID"/>
                         <br>
-
-                        <input type="password" name="P" id="pass" placeholder="password"/>
-
+                        <input type="password" name="password" id="password" placeholder="Password"/>
                         <br>
-
-                        <div id="err"> Enter UCID & Password </div>
-
-                        <input type="submit" value = "Log In" name="submit"/>
-
-
-
+                        <div> Enter UCID & Password </div>
+                        <button type="submit" id="submitform"> Submit </button>
                     </form>
-
+                    <h1 id="error"> </h1>
                 </center>
-
-
-
             </section>
-
         </div>
-    </body>
+</body>
 
 </html>
