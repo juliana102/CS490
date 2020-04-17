@@ -1,0 +1,106 @@
+<html>
+<head>
+<title>Take Test</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<link rel="stylesheet" style="text/css" href="text.css">
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.6/dist/css/uikit.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.3.6/dist/js/uikit.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.3.6/dist/js/uikit-icons.min.js"></script>
+<script type="text/javascript">
+function logOut(){
+    console.log("Log out");
+    window.localStorage.removeItem('username');
+    window.localStorage.removeItem('type')
+    window.location.replace('https://web.njit.edu/~jac323/index.php');
+}
+
+function listener(){
+    request(" ");
+    function request(data){
+        let req = new XMLHttpRequest();
+        req.addEventListener( 'load', createExam );
+        req.open("POST", "https://web.njit.edu/~cc593/back/save.php");
+        req.responseType = 'json';
+        req.send(" ");
+      }
+      function createExam(){
+      var response = this.response;
+      var s =JSON.parse(JSON.stringify(this.response));
+      for(i=1;i<response.length;i++){
+        var itm = document.getElementById("cardtemplate");
+        var cln = itm.cloneNode(true);
+        cln.getElementsByTagName("h1")[0].innerHTML = "Question " .concat(i);
+        cln.getElementsByTagName("p")[0].innerHTML = response[i]["question"];
+        cln.getElementsByTagName("textarea")[0].setAttribute("id", i);
+        cln.classList.remove("hidden");
+        document.getElementById("test").appendChild(cln);
+      }
+    }
+    save()
+}
+function save () {
+  var form = document.getElementById('save12');
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        console.log("here");
+          var formData = new FormData(form);
+
+        });
+      form.addEventListener('formdata', (e) => {
+        let data = e.formData;
+
+        var len = document.getElementsByTagName("textarea").length;
+        console.log(len);
+        for(i=1;i<len;i++){
+          var temp = document.getElementById(i).value;
+          data.append(i, temp);
+
+        }
+        data.append("reqid","2");
+
+        let req = new XMLHttpRequest();
+
+        for (var value of data.values()) { console.log(value);}
+        req.addEventListener( 'load', saveresponse );
+        req.open("POST", "https://web.njit.edu/~cc593/mid/save.php");
+        req.responseType = 'json';
+        req.send(data)});
+
+      function saveresponse () {
+          var response = this.response;
+          console.log(response)}
+
+}
+ </script>
+</head>
+<body onload="listener()" style="background-color:white">
+
+  <ul>
+    <li><a href="studentpage.html">Home</a></li>
+    <li><a class="active" href="taketest.html">Take Test</a></li>
+    <li><a href="viewResults.html">View Results</a></li>
+    <li><a href="javascript:logOut()">Logout</a></li>
+  </ul>
+<div class="column" onload="save()">
+  <form action="" method="" id="save12"> <div>
+    <div class="question" id="test">
+      <div id="cardtemplate" class="newcard hidden">
+
+          <header class="top" >
+              <h1>Question 1</h1>
+        </header>
+      <div class="content">
+            <p >Write a function named not_string that takes argument str and adds 'not' to the front of the given string, unless the s
+              tring already begins with 'not' then return the string unchanged.
+                </p>
+              </div>
+      <textarea class="answerbox" name="ans" rows="1" id="answers"></textarea>
+      </div>
+      </div>
+<button  type="submit" id="svbtn"> Submit </button></form></div>
+
+</body>
+</html>
