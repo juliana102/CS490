@@ -29,3 +29,26 @@ function loggedInStudent(){
     var role = window.localStorage.getItem('role');
     document.getElementById("userid").innerHTML = "User: "+user
 }
+function select(){
+var input = document.getElementById('dflag').value;
+document.querySelectorAll('tr').forEach(element=>{
+element.style.display = "table-row";
+})
+
+document.querySelectorAll('tr:not(.'+input+')').forEach(element=>{
+element .style.display = "none";
+})
+}
+
+function selectFour() {
+  var input = document.getElementById("tflag").value;
+  var nodes = document.getElementsByTagName('tr');
+
+  for (i = 0; i < nodes.length; i++) {
+    if (nodes[i].innerText.toLowerCase().includes(input)) {
+      nodes[i].style.display = "tr";
+    } else {
+      nodes[i].style.display = "none";
+    }
+  }
+}
